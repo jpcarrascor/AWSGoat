@@ -17,12 +17,10 @@ jobs:
       - name: Run OWASP ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          target: 'https://example.com'  # Reemplaza con la URL de tu app
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
+          target: 'https://example.com'  # Temporal
 
       - name: Upload ZAP Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ZAP-Report
           path: report_html.html
